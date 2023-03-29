@@ -1,0 +1,5 @@
+pandas
+shutils
+numpy
+pathlib
+plotly
