@@ -1,2 +1,4 @@
-BASE_PATH = "C:\\Users\\2000080516\\Downloads\\PythonPackaging"
-ARCHIVE_PATH = "C:\\Users\\2000080516\\Downloads\\PythonPackaging\\archive"
+# path setting 
+
+BASE_PATH = "C:/Users/2000080516/OneDrive - Hexaware Technologies/Desktop/construct_data_pipeline"
+ARCHIVE_PATH = "C:/Users/2000080516/OneDrive - Hexaware Technologies/Desktop/construct_data_pipeline/archive"

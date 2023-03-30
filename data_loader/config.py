@@ -1,4 +1,4 @@
-from constants import BASE_PATH, ARCHIVE_PATH
+# config script
 
 class Configuration:
     """configuration concept or blue-print"""
@@ -6,5 +6,7 @@ class Configuration:
         self.BASE_PATH = BASE_PATH
         self.ARCHIVE_PATH = ARCHIVE_PATH
 
-config = Configuration(BASE_PATH=BASE_PATH,ARCHIVE_PATH=ARCHIVE_PATH)
-print(config.ARCHIVE_PATH)
+# DEBUGGER------------------------------------------------------------>
+# config = Configuration(BASE_PATH=BASE_PATH,ARCHIVE_PATH=ARCHIVE_PATH)
+# print(config.ARCHIVE_PATH)
+# DEBUGGER------------------------------------------------------------->

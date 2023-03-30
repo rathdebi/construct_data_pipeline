@@ -3,3 +3,4 @@ shutils
 numpy
 pathlib
 plotly
+sklearn
