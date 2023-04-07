@@ -29,7 +29,11 @@ version 0.0.2:-
         2.2- in case file not there, copy from archive
             2.2.1- verify archive path, if not create it
         2.3- if merged data present then read as is
-            2.3.1- merge data read need to be fixed [TODO]
+            2.3.1- merge data read need to be fixed[DONE]
+            2.3.2- merge data read issue fixed, working in sequence
     4- load data file from base path
+        4.1- using load data module access data as per process
+        4.2- print data in buffer/ restore back to be used
     5- runnable data pipeline with data load(TEST success)
+        5.1- pipeline line working now, all tests passed
 
