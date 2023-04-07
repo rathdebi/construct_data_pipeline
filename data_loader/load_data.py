@@ -21,34 +21,35 @@ class LoadData(Configuration):
     #         return self.copy_file_from_archive() # copy files from archive folder
 
     def read_csv_file_if_exists(self):
-        """reading CSV file if exist in a given path"""
-        if not os.path.exists(self.BASE_PATH+ "input"):
+        """reading CSV file if exists in a given path"""
+        if not os.path.exists(self.BASE_PATH + "input"):
             os.makedirs(self.BASE_PATH + "input")
    
         elif not os.path.exists(self.ARCHIVE_PATH):
             os.makedirs(self.BASE_PATH + "archive")
 
-        elif Path(f"{self.BASE_PATH}/input").glob("*.csv"):
-            return True
+        elif not len(list(Path(f"{self.BASE_PATH}/input").glob("*.csv"))) == 2:
+            return self.copy_file_from_archive(self.BASE_PATH, self.ARCHIVE_PATH) 
    
         else:
-            return self.copy_file_from_archive(self.BASE_PATH, self.ARCHIVE_PATH) 
+            return "input file exists!!!"
 
         
     def copy_file_from_archive(self):
         """copy files from archive folder to input"""
-        if not os.path.exists(self.BASE_PATH+ "input"):
+        if not os.path.exists(self.BASE_PATH + "input"):
             os.makedirs(self.BASE_PATH + "input")
 
         elif not os.path.exists(self.ARCHIVE_PATH):
             os.makedirs(self.BASE_PATH + "archive")
 
-        elif Path(self.ARCHIVE_PATH).glob("*.csv"):
+        elif len(list(Path(self.ARCHIVE_PATH).glob("*.csv"))) == 2:
             with os.scandir(self.ARCHIVE_PATH) as files:
                 for file in files:
                     shutil.copy(file,f"{self.BASE_PATH}/input")
         else:
-            raise Exception("file not there in archive!!!")
+            raise Exception("archive folder do not contain files!!!")
+
 
 
     # def copy_file_from_archive(self):
@@ -80,8 +81,8 @@ class LoadData(Configuration):
                 data = pd.DataFrame() 
                 for item in files_in_basepath:
                     if item.name.endswith('.csv'):
-                        if Path(f"{self.BASE_PATH}/input/merged_input.csv").exists():
-                            data = pd.read_csv(f"{self.BASE_PATH}/input/merged_input.csv")
+                        if Path(f"{self.BASE_PATH}/input/merged_input_data.csv").exists():
+                            data = pd.read_csv(f"{self.BASE_PATH}/input/merged_input_data.csv")
                         else:
                             df =  self.merge_source_data(item,
                                                   'is_red',
